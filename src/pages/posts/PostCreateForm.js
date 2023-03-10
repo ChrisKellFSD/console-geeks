@@ -18,16 +18,19 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
     title: "",
     content: "",
     image: "",
+    category: "",
   });
-  const { title, content, image } = postData;
+  const { title, content, image, category } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -49,12 +52,21 @@ function PostCreateForm() {
     }
   };
 
+  const handleChangeCategory = (event) => {
+    setPostData({
+      ...postData,
+      category: event.target.value,
+    });
+  };
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
 
     formData.append("title", title);
     formData.append("content", content);
+    formData.append('category', category);
     formData.append("image", imageInput.current.files[0]);
 
     try {
@@ -100,6 +112,29 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
+                  <Form.Group controlId="category">
+              <Form.Label className={`${styles.Label} d-none`}>
+                Category
+              </Form.Label>
+              <Form.Control
+                as="select"
+                value={category}
+                onChange={handleChangeCategory}
+                className={`${styles.Input} ${styles.Category}`}
+              >
+                <option defaultValue>Select Category</option>
+                <option value="playstation">Playstation</option>
+                <option value="xbox">Xbox</option>
+                <option value="pc">PC</option>
+                <option value="nintendo">Nintendo</option>
+                <option value="tech">Tech</option>
+              </Form.Control>
+            </Form.Group>
+            {errors?.category?.map((message, idx) => (
+              <Alert className={styles.Alert} variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}

@@ -13,6 +13,8 @@ const Post = (props) => {
     profile_image,
     comments_count,
     likes_count,
+    favourites_count,
+    favourite_id,
     like_id,
     title,
     content,
@@ -73,6 +75,38 @@ const Post = (props) => {
             <i className="far fa-comments" />
           </Link>
           {comments_count}
+          {is_owner ? (
+            <>
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>You can't favourite your own post</Tooltip>}
+              >
+                <i className="fas fa-bookmark" />
+              </OverlayTrigger>
+            </>
+          ) : favourite_id ? (
+            <>
+              <span onClick={() => {}}>
+                <i className={"fa-solid fa-bookmark" } />
+              </span>
+            </>
+          ) : currentUser ? (
+            <>
+              <span onClick={() => {}}>
+                <i className={"fa-regular fa-bookmark"} />
+              </span>
+            </>
+          ) : (
+            <>
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Log in to favourite posts</Tooltip>}
+              >
+                <i className={"fa-regular fa-bookmark"} />
+              </OverlayTrigger>
+            </>
+          )}
+          {favourites_count}
         </div>
       </Card.Body>
     </Card>

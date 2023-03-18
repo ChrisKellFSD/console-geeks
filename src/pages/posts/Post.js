@@ -134,11 +134,6 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
-        <Card.Text className="text-center">
-          <Badge variant="dark" className={postStyles.Badge}>
-            {category}
-          </Badge>
-          </Card.Text>
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
@@ -200,6 +195,11 @@ const Post = (props) => {
             </>
           )}
           {favourites_count}
+          <Card.Text className="text-center">
+          <Badge variant="dark" className={postStyles.Badge}>
+            {category}
+          </Badge>
+          </Card.Text>
         </div>
       </Card.Body>
     </Card>

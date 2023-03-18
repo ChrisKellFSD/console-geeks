@@ -74,7 +74,6 @@ function PostsPage({ message, filter = "" }) {
         </Form>
         <Badge
           variant="dark"
-          pill
           className={postStyles.Badge}
           onClick={() => setCategory(null)}
         >
@@ -82,7 +81,6 @@ function PostsPage({ message, filter = "" }) {
         </Badge>
         <Badge
           variant="dark"
-          pill
           className={postStyles.Badge}
           onClick={() => setCategory("playstation")}
         >
@@ -90,7 +88,6 @@ function PostsPage({ message, filter = "" }) {
         </Badge>
         <Badge
           variant="dark"
-          pill
           className={postStyles.Badge}
           onClick={() => setCategory("xbox")}
         >
@@ -98,7 +95,6 @@ function PostsPage({ message, filter = "" }) {
         </Badge>
         <Badge
           variant="dark"
-          pill
           className={postStyles.Badge}
           onClick={() => setCategory("pc")}
         >
@@ -106,7 +102,6 @@ function PostsPage({ message, filter = "" }) {
         </Badge>
         <Badge
           variant="dark"
-          pill
           className={postStyles.Badge}
           onClick={() => setCategory("nintendo")}
         >
@@ -114,7 +109,6 @@ function PostsPage({ message, filter = "" }) {
         </Badge>
         <Badge
           variant="dark"
-          pill
           className={postStyles.Badge}
           onClick={() => setCategory("tech")}
         >

@@ -6,13 +6,25 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import { CurrentUserProvider } from "./contexts/CurrentUserContext";
 import { ProfileDataProvider } from "./contexts/ProfileDataContext";
+import { transitions, positions, Provider as AlertProvider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
+
+const options = {
+  position: positions.TOP_CENTER,
+  timeout: 2000,
+  offset: "20vh",
+  transition: transitions.SCALE,
+  zIndex: 100,
+};
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
     <CurrentUserProvider>
         <ProfileDataProvider>
+        <AlertProvider template={AlertTemplate} {...options}>
           <App />
+          </AlertProvider>
         </ProfileDataProvider>
       </CurrentUserProvider>
     </Router>

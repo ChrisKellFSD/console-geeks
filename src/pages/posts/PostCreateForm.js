@@ -19,6 +19,9 @@ import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
+import { useAlert } from "react-alert";
+
+// Alert box adapted from https://www.npmjs.com/package/react-alert
 
 function PostCreateForm() {
   useRedirect("loggedOut");
@@ -34,6 +37,7 @@ function PostCreateForm() {
 
   const imageInput = useRef(null);
   const history = useHistory();
+  const alert = useAlert();
 
   const handleChange = (event) => {
     setPostData({
@@ -71,6 +75,7 @@ function PostCreateForm() {
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
+      alert.success("Post successfully added!");
       history.push(`/posts/${data.id}`);
     } catch (err) {
       console.log(err);

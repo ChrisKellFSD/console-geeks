@@ -4,6 +4,9 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 
 import Post from "./Post";
 import Asset from "../../components/Asset";
@@ -63,7 +66,16 @@ function PostsPage({ message, filter = "" }) {
             placeholder="Search posts"
           />
         </Form>
-
+        <ButtonToolbar aria-label="Toolbar with button groups">
+        <ButtonGroup aria-label="Categories">
+      <Button variant="secondary">All</Button>
+      <Button variant="secondary">Playstation</Button>
+      <Button variant="secondary">Xbox</Button>
+      <Button variant="secondary">PC</Button>
+      <Button variant="secondary">Nintendo</Button>
+      <Button variant="secondary">Tech</Button>
+    </ButtonGroup>
+</ButtonToolbar>
         {hasLoaded ? (
           <>
             {posts.results.length ? (

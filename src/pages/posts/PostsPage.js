@@ -4,12 +4,12 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import { Badge } from "react-bootstrap";
+import postStyles from "../../styles/PostsPage.module.css";
 
 import Post from "./Post";
 import Asset from "../../components/Asset";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
@@ -25,13 +25,19 @@ function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
-
+  const currentUser = useCurrentUser();
   const [query, setQuery] = useState("");
+  const [category, setCategory] = useState(null);
+
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
+        const { data } = await axiosReq.get(
+          `/posts/?${filter}search=${query}${
+            category !== null ? `&category=${category}` : ""
+          }`
+        );
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
@@ -47,7 +53,7 @@ function PostsPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname]);
+  }, [filter, query, pathname, category, currentUser]);
 
   return (
     <Row className="h-100">
@@ -66,16 +72,54 @@ function PostsPage({ message, filter = "" }) {
             placeholder="Search posts"
           />
         </Form>
-        <ButtonToolbar aria-label="Toolbar with button groups">
-        <ButtonGroup aria-label="Categories">
-      <Button variant="secondary">All</Button>
-      <Button variant="secondary">Playstation</Button>
-      <Button variant="secondary">Xbox</Button>
-      <Button variant="secondary">PC</Button>
-      <Button variant="secondary">Nintendo</Button>
-      <Button variant="secondary">Tech</Button>
-    </ButtonGroup>
-</ButtonToolbar>
+        <Badge
+          variant="dark"
+          pill
+          className={postStyles.Badge}
+          onClick={() => setCategory(null)}
+        >
+          All
+        </Badge>
+        <Badge
+          variant="dark"
+          pill
+          className={postStyles.Badge}
+          onClick={() => setCategory("playstation")}
+        >
+          Playstation
+        </Badge>
+        <Badge
+          variant="dark"
+          pill
+          className={postStyles.Badge}
+          onClick={() => setCategory("xbox")}
+        >
+          Xbox
+        </Badge>
+        <Badge
+          variant="dark"
+          pill
+          className={postStyles.Badge}
+          onClick={() => setCategory("pc")}
+        >
+          PC
+        </Badge>
+        <Badge
+          variant="dark"
+          pill
+          className={postStyles.Badge}
+          onClick={() => setCategory("nintendo")}
+        >
+          Nintendo
+        </Badge>
+        <Badge
+          variant="dark"
+          pill
+          className={postStyles.Badge}
+          onClick={() => setCategory("tech")}
+        >
+          Tech
+        </Badge>
         {hasLoaded ? (
           <>
             {posts.results.length ? (

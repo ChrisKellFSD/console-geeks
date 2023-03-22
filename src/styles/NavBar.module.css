@@ -1,6 +1,7 @@
 .NavBar {
-  background-color: #ffffff;
-  border: 1px solid #dadadf;
+  background: #120025;
+  background-image: linear-gradient(to right, #011616 0%, #330867 100%);
+  border-bottom: 1px solid #e60c0c;
 }
 
 .NavLink {

@@ -1,6 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import logo from "../assets/logo.png";
+import { Navbar, Container, Nav, Dropdown } from "react-bootstrap";
 import logo_main from "../assets/logo_main.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
@@ -52,15 +51,33 @@ const NavBar = () => {
       >
         <i className="fas fa-bookmark"></i>Favourites
       </NavLink>
-      <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
-        <i className="fas fa-sign-out-alt"></i>Sign out
-      </NavLink>
+      <Dropdown>
+  <Dropdown.Toggle variant="transparent" id="avatar-dropdown" className={styles.NavLink}>
+    <Avatar src={currentUser?.profile_image} text="Account" height={40} />
+  </Dropdown.Toggle>
+  <Dropdown.Menu>
+    <Dropdown.Item>
       <NavLink
-        className={styles.NavLink}
+        className={styles.DropNavLink}
         to={`/profiles/${currentUser?.profile_id}`}
       >
-        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+        Profile
       </NavLink>
+    </Dropdown.Item>
+    <Dropdown.Item>
+    <NavLink
+        className={styles.DropNavLink}
+        to={`/profiles/${currentUser?.profile_id}`}
+      >
+      Contact
+      </NavLink>
+    </Dropdown.Item>
+    <Dropdown.Item>
+    <NavLink className={styles.DropNavLink} to="/" onClick={handleSignOut}>Sign out
+      </NavLink>
+    </Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
     </>
   );
   const loggedOutIcons = (

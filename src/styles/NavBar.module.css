@@ -1,10 +1,16 @@
 .NavBar {
-  background: #120025;
-  background-image: linear-gradient(to right, #011616 0%, #330867 100%);
+  background-color: #FF3CAC;
+  background-image: linear-gradient(to right, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
   border-bottom: 1px solid #e60c0c;
 }
 
 .NavLink {
+  color: white;
+  padding: 5px;
+}
+
+.DropNavLink {
+  color: rgb(7, 0, 0);
   padding: 5px;
 }
 

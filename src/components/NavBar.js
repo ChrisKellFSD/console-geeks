@@ -67,7 +67,7 @@ const NavBar = () => {
     <Dropdown.Item>
     <NavLink
         className={styles.DropNavLink}
-        to={`/profiles/${currentUser?.profile_id}`}
+        to="/contact"
       >
       Contact
       </NavLink>

@@ -3,9 +3,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import styles from "../../styles/PostCreateEditForm.module.css";
+import styles from "../../styles/ContactEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router";
@@ -48,7 +47,7 @@ const ContactForm = () => {
 
 
   const textFields = (
-    <div className="text-center">
+    <div>
         <Form.Group>
             <Form.Label>Name</Form.Label>
             <Form.Control
@@ -56,6 +55,7 @@ const ContactForm = () => {
                 name="name"
                 value={name}
                 onChange={handleChange}
+                className="small-input"
             />
         </Form.Group>
         {errors?.title?.map((message, idx) => (
@@ -71,6 +71,7 @@ const ContactForm = () => {
                 name="subject"
                 value={subject}
                 onChange={handleChange}
+                className="small-input"
             />
         </Form.Group>
         {errors?.title?.map((message, idx) => (
@@ -103,20 +104,21 @@ const ContactForm = () => {
 
 return (
     <Form onSubmit={handleSubmit}>
-        <Row>
-            <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-                <Container
-                    className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-                >
-                    <div className="d-md-none">{textFields}</div>
-                </Container>
-            </Col>
-            <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-                <Container className={appStyles.Content}>{textFields}</Container>
-            </Col>
-        </Row>
+      <Row className="justify-content-center">
+        <Col md={8}>
+          <div className={`${appStyles.Content} ${styles.Container}`}>
+            <h2>Contact Us</h2>
+            <p>
+              Have a question about Console Wars that you want answered? Get in
+              touch now by filling in the contact form and we will get back to
+              you asap. Thank you
+            </p>
+            {textFields}
+          </div>
+        </Col>
+      </Row>
     </Form>
-);
-}
+  );
+}  
 
 export default ContactForm;

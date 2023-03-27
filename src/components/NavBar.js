@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Container, Nav, Dropdown } from "react-bootstrap";
-import logo_main from "../assets/logo_main.png";
+import logo_white from "../assets/logo_white.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import {
@@ -109,7 +109,7 @@ const NavBar = () => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
-            <img src={logo_main} alt="logo" height="45" />
+            <img src={logo_white} alt="logo" height="50" />
           </Navbar.Brand>
         </NavLink>
         {currentUser && addPostIcon}

@@ -73,35 +73,35 @@ function PostsPage({ message, filter = "" }) {
           />
         </Form>
         <Badge
-          variant="dark"
+          variant="light"
           className={postStyles.Badge}
           onClick={() => setCategory(null)}
         >
           All
         </Badge>
         <Badge
-          variant="dark"
+          variant="primary"
           className={postStyles.Badge}
           onClick={() => setCategory("playstation")}
         >
           Playstation
         </Badge>
         <Badge
-          variant="dark"
+          variant="success"
           className={postStyles.Badge}
           onClick={() => setCategory("xbox")}
         >
           Xbox
         </Badge>
         <Badge
-          variant="dark"
+          variant="warning"
           className={postStyles.Badge}
           onClick={() => setCategory("pc")}
         >
           PC
         </Badge>
         <Badge
-          variant="dark"
+          variant="info"
           className={postStyles.Badge}
           onClick={() => setCategory("nintendo")}
         >

@@ -1,7 +1,9 @@
 .Container {
-    min-height: 343px;
+    min-height: 100vh;
+    padding: 3em;
   }
 
-.small-input {
-    width: 50px;
-}
+  .Logo {
+    height: 25vh;
+    padding-bottom: 20px;
+  }

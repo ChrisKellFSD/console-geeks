@@ -18,7 +18,6 @@ const options = {
 };
 
 ReactDOM.render(
-  <React.StrictMode>
     <Router>
     <CurrentUserProvider>
         <ProfileDataProvider>
@@ -27,8 +26,7 @@ ReactDOM.render(
           </AlertProvider>
         </ProfileDataProvider>
       </CurrentUserProvider>
-    </Router>
-  </React.StrictMode>,
+    </Router>,
   document.getElementById("root")
 );
 

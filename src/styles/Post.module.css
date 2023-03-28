@@ -1,7 +1,7 @@
 .Post {
     background-color: #ffffff;
-    border: 1px solid #dadadf;
-    border-radius: 2px;
+    border: 1px solid #e60c0c;
+    border-radius: 10px;
     margin-bottom: 16px;
     text-align: center;
   }
@@ -33,4 +33,8 @@
   
   .FavouriteOutline:hover {
     color: #32f86e;
+  }
+
+  .CardTitle {
+    font-weight: bold;
   }

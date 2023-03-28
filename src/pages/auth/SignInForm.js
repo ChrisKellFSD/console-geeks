@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import signin from "../../assets/signin.png";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
@@ -89,10 +89,10 @@ function SignInForm() {
               </Alert>
             ))}
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
+              className={`${btnStyles.Button} ${btnStyles.Wide}`}
               type="submit"
             >
-              Sign in
+              SIGN IN
             </Button>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
@@ -100,10 +100,9 @@ function SignInForm() {
               </Alert>
             ))}
           </Form>
-        </Container>
-        <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
-            Don't have an account? <span>Sign up now!</span>
+            <br></br>
+            <p>Don't have an account? <span>Sign up now!</span></p>
           </Link>
         </Container>
       </Col>
@@ -113,7 +112,7 @@ function SignInForm() {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero.jpg"}
+          src={signin}
         />
       </Col>
     </Row>

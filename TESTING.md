@@ -24,10 +24,11 @@
 
     ![lighthouse](/docs/validators/lighthouse.JPG)
 
-## User Story / Project Goals Testing
+## User Story Testing
+### Project Goals
 
 *As a user I can Fill out a contact form so that I can send a message if I want to
-- This is ddone by clicking on the Contact link in the Navbar. The user is then shown a form that they can fill out to contact the site owner.
+- This is done by clicking on the Contact link in the Navbar. The user is then shown a form that they can fill out to contact the site owner.
 
 *As a user I can edit my profile information' so that I can update it if I wish
 - This is done by clicking on the profile link in the Navbar and clicking the 3 dots on the right. Once this is clicked on you can see the options available to edit your profile

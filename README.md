@@ -13,51 +13,16 @@ DEPLOYED BACKEND REPOSITORY - [CLICK HERE](https://github.com/ChrisKellFSD/conso
 
 ## Table of Contents
 - [User Experience (UX)](#user-experience)
-    - [Site Purpose](#site-purpose)
-    - [Site Goals](#site-goals)
-    - [Epics](#epics)
-    - [User Stories](#user-stories)
 - [Design](#design)
-    - [Wireframes](#wireframes)
-    - [Colour Scheme](#color-scheme)
-    - [Fonts](#fonts)
 - [Agile](#agile)
 - [Features](#features)
-    - [Homepage](#homepage)
-    - [Homepage - Mobile](#homepage---mobile)
-    - [NavBar](#navbar)
-    - [Sign in, Sign out and Sign up](#sign-in-sign-out-and-sign-up)
-    - [Posts](#posts)
-    - [Reviews](#reviews)
-    - [Events](#events)
-    - [Profiles](#profiles)
-    - [About](#about)
 - [Future Development](#future-development)
 - [Components](#components)
 - [Testing](#testing)
-    - [Manual Testing](#manual-testing)
-    - [Browser and Device Testing](#browser-and-device-testing)
-    - [W3C Validator](#w3c-validatior)
-    - [ES Lint](#es-lint)
-    - [Colour Contrast Checks](#colour-contrast-checks)
-    - [Lighthouse Tool](#lighthouse-tool)
-- [Solved Bugs](#solved-bugs)
-- [Known Bugs](#known-bugs)
+- [Bugs](#bugs)
 - [Technologies Used](#technologies-used)
-    - [Languages Used](#languages-used)
-    - [Frameworks, Libraries and Programs](#frameworks-libraries-and-programs)
-    - [Databases](#databases)
 - [Deployment](#deployment)
-    - [Workspace and Deployment Setup](#workspace-and-deployment-setup)
-    - [Connecting to API](#connecting-to-api)
-    - [Deploying to Heroku](#deploying-to-heroku)
-    - [Forking Repository](#forking-repository)
-    - [Cloning Repository](#cloning-repository)
 - [Credits](#credits)
-    - [Content](#content)
-    - [Media](#media)
-    - [Resources](#resources)
-    - [Acknowledgements](#acknowledgements)
 
 
 ## User Experience
@@ -144,7 +109,7 @@ The font used in this project was DM Sans with a backup of sans-serif. It was ch
 ## Features
 
 ### Sign Up
-The Sign up shows clear indication for the user on what options they have availble to them. They can select a username, password and repeat the password before signgin up. If they already have an account, they can click on the sign in button below. I've also reinforced the branding by creating a nice little graphic to be next to the form.
+The Sign up shows clear indication for the user on what options they have availble to them. They can select a username, password and repeat the password before signing up. If they already have an account, they can click on the sign in button below. I've also reinforced the branding by creating a nice little graphic to be next to the form.
 
 
 ![Sign Up](docs/misc/sign-up.JPG)
@@ -218,7 +183,7 @@ The popular profiles tab is a nice little feature to the right on desktop or at 
 ![Popular Profiles 3](docs/misc/pprofiles-accordion.JPG)
 
 ## Future Development
-- I would have liked to have a side nav and wanted to use the bootstrap one but was only availble in the newest version. As I was working with an older version of bootstrap, I didn't think it was worth potentially breaking some bootstrap elements (The accodion component for example has different naming conventions in newer versions). 
+- I would have liked to have a side nav and wanted to use the bootstrap one but was only availble in the newest version. As I was working with an older version of bootstrap, I didn't think it was worth potentially breaking some bootstrap elements (The accordion component for example has different naming conventions in newer versions). 
 - Private messaging between users
 - The ability to create groups
 - Notifications for when a user receives a new follow, comment or like
@@ -267,7 +232,7 @@ Throughout my project, my NavBar contained a bootstrap dropdown component to mak
 - [Gitpod](https://gitpod.io/projects)
 - [Git](https://git-scm.com/)
 - [GitHub](https://github.com/)
-- [Am I Resposive](https://ui.dev/amiresponsive)
+- [Am I Responsive](https://ui.dev/amiresponsive)
 - [Google Fonts](https://fonts.google.com/)
 - [Font Awesome](https://fontawesome.com/)
 - [Figma](https://figma.com/)

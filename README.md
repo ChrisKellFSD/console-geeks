@@ -9,7 +9,7 @@ DEPLOYED API (HEROKU) - [CLICK HERE](https://ck-fsd-console-geeks.herokuapp.com/
 
 DEPLOYED BACKEND REPOSITORY - [CLICK HERE](https://github.com/ChrisKellFSD/console-geeks-api)
 
-![Mockup](docs/mockups/website_mockup_generator.png)
+![Mockup](docs/responsive/am-i-responsive.JPG)
 
 ## Table of Contents
 - [User Experience (UX)](#user-experience)
@@ -433,20 +433,14 @@ The website has performed well in the Lighthouse tool, in particular for Accessi
 ![About](docs/testing/lighthouse.png)
 
 
-## Solved Bugs
+## Bugs
 
-1. Some of the validation for the post create form wasn't working as expected and allowed posts to be created without any content being added. This was an issue on the API side and was fixed by updating the Gamer Verse API post model to make the description field required.
+Throughout my project, my NavBar contained a bootstrap dropdown component to make it look neater for the Account options. The user would click on 'Account' and get another dropdown for Profile, Contact and Sign Out. Unfortunately, I noticed that on mobile screens, the dropdown for Account didn't work. I took it out due to time contraints but would like to implement it correctly in the future.
 
-2. A 'The submitted data was not a file. Check the encoding type on the form.' error occurred when trying to submit an image for the post create form. This was fixed by changing 'formData.append('image', image)' to 'formData.append('image', imageInput.current.files[0]);'. [Link to commit](https://github.com/Jbachtiger/ci-pp5-gamer-verse/commit/c6df28fc5bb59e496ad93c5217f3c81c63da4083)
+![NavBarBug1](docs/gifs/account-dropdown.gif)
+![NavBarBug2](docs/gifs/account-dropdown-mobile.gif)
 
-3. The game publisher and developer fields were not clickable in the review create form. This was fixed by changing the fields within the form control from as="text" to type="text". [Link to commit](https://github.com/Jbachtiger/ci-pp5-gamer-verse/commit/1a20ae10a43678975b5a0787df2a49d55c9b1659) 
 
-4. An issue occurred where the reviews page wasn't displaying images correctly and they just showed as broken. After much debugging and with the help of Rebecca from Tutor support the issue was finally narrowed down to being with the reviews serializer not having an image field included. Once added the images displayed as expected.
-
-5. The following error displayed 'Warning: Invalid DOM property `class`. Did you mean `className`?'. This happened due to adding class rather than className for the favourite navbar. [Link to commit](https://github.com/Jbachtiger/ci-pp5-gamer-verse/commit/9afca9c663660f9bc6e3714ade23a1bcc72f594b)
-
-## Known Bugs
-No known bugs left. If you find any please contact the project owner.
 
 ## Technologies Used
 ### Languages Used

@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import Dropdown from "react-bootstrap/Dropdown";
 import logo_white from "../assets/logo_white.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
@@ -27,7 +26,7 @@ const NavBar = () => {
       setCurrentUser(null);
       removeTokenTimestamp();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -56,33 +55,27 @@ const NavBar = () => {
       >
         <i className="fas fa-bookmark"></i>Favourites
       </NavLink>
-      <Dropdown>
-  <Dropdown.Toggle variant="transparent" id="avatar-dropdown" className={styles.NavLink}>
-    <Avatar src={currentUser?.profile_image} text="Account" height={40} />
-  </Dropdown.Toggle>
-  <Dropdown.Menu>
-    <Dropdown.Item>
       <NavLink
-        className={styles.DropNavLink}
-        to={`/profiles/${currentUser?.profile_id}`}
-      >
-        Profile
-      </NavLink>
-    </Dropdown.Item>
-    <Dropdown.Item>
-    <NavLink
-        className={styles.DropNavLink}
+        className={styles.NavLink}
+        activeClassName={styles.Active}
         to="/contact"
       >
-      Contact
+        <i className="fas fa-id-badge"></i>Contact
       </NavLink>
-    </Dropdown.Item>
-    <Dropdown.Item>
-    <NavLink className={styles.DropNavLink} to="/" onClick={handleSignOut}>Sign out
+      <NavLink
+        className={styles.NavLink}
+        to={`/profiles/${currentUser?.profile_id}`}
+      >
+        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
       </NavLink>
-    </Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/"
+        onClick={handleSignOut}
+      >
+        <i className="fas fa-sign-out-alt"></i>Sign out
+      </NavLink>
     </>
   );
   const loggedOutIcons = (

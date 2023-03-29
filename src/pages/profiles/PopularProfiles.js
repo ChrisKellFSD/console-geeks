@@ -1,6 +1,6 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import {Accordion} from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Accordion from "react-bootstrap/Accordion";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import appStyles from "../../App.module.css";

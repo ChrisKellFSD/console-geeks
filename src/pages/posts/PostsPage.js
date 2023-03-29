@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { Badge } from "react-bootstrap";
+import Badge from "react-bootstrap/Badge";
 import postStyles from "../../styles/PostsPage.module.css";
 
 import Post from "./Post";
